@@ -199,6 +199,7 @@ This template is open source and available under the MIT License.
 - Styled with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 - Hosted on [GitHub Pages](https://pages.github.com/)
 - Inspired by modern documentation sites and technical blogs
+- Browse more themes at [MkDocs Theme Gallery](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
 
 ---
 
