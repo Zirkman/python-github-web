@@ -109,10 +109,40 @@ Create `.github/workflows/deploy.yml` for automatic deployment on every push to 
 
 ### Custom Domain Setup
 
-1. **Purchase domain** from any registrar
-2. **Add CNAME file** to `docs/` directory with your domain name
-3. **Configure DNS** at your registrar to point to GitHub Pages
-4. **Enable custom domain** in GitHub repository settings
+1. **Purchase domain** from any registrar (Namecheap, Google Domains, Cloudflare, etc.)
+
+2. **Configure DNS at your registrar**:
+   
+   **For apex domain (yourdomain.com):**
+   ```
+   Type: A
+   Name: @
+   Values: 
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+   ```
+   
+   **For www subdomain (optional):**
+   ```
+   Type: CNAME
+   Name: www
+   Value: yourusername.github.io
+   ```
+
+3. **Configure GitHub Pages**:
+   - Go to your repository Settings → Pages
+   - Under "Custom domain", enter your domain name
+   - GitHub will automatically create a `CNAME` file in your `docs/` folder
+   - Wait for DNS verification (green checkmark)
+
+4. **SSL Certificate**:
+   - GitHub automatically provides HTTPS after DNS verification
+   - Usually takes a few minutes to several hours
+   - Enable "Enforce HTTPS" in repository settings once available
+
+**Note**: DNS changes can take up to 24 hours to propagate globally. Your site will be accessible at both your custom domain and the default GitHub Pages URL.
 
 ## Content Management
 
